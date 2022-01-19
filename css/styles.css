@@ -49,7 +49,7 @@ p {
   margin: 0;
 }
 
-.img-card {
+img {
   display: block;
 }
 
@@ -100,9 +100,13 @@ p {
   margin-right: 50px;
 }
 .auth-nav-link-icon {
-  width: 16px;
-  height: 12px;
+  margin-right: 10px;
+
+  align-self: center;
+
+  fill: currentColor;
 }
+
 .site-nav-link,
 .auth-nav-link {
   display: block;
@@ -112,11 +116,12 @@ p {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
-
   text-decoration: none;
   letter-spacing: 0.02em;
-
   color: var(--primary-text-color);
+}
+.auth-nav-link {
+  display: flex;
 }
 .site-nav-link {
   color: var(--title-text-color);
@@ -133,6 +138,9 @@ p {
 /* Основной контент */
 
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+
   background-color: #2f303a;
   text-align: center;
 }
@@ -181,6 +189,19 @@ p {
 .feature-item:not(:last-child) {
   margin-right: 30px;
 }
+.feature-rectangle {
+  display: flex;
+  margin-bottom: 30px;
+
+  width: 270px;
+  height: 120px;
+
+  background: var(--secondary-bg-color);
+  border-radius: 4px;
+}
+.feature-icon {
+  margin: auto;
+}
 .feature-title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -201,6 +222,9 @@ p {
 }
 .second {
   display: flex;
+}
+.second-section {
+  padding-bottom: 94px;
 }
 .second-item:not(:last-child) {
   margin-right: 30px;
@@ -255,6 +279,37 @@ p {
   text-align: center;
   letter-spacing: 0.03em;
 }
+.networks {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.networks-item:not(:last-child) {
+  margin-right: 10px;
+}
+.networks-link {
+  display: flex;
+  border-radius: 50%;
+
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  color: #afb1b8;
+  /* background-color: tomato; */
+}
+.networks-link:hover,
+.networks-link:focus {
+  background-color: var(--accen-color);
+}
+.networks-icon {
+  margin: auto;
+
+  fill: currentColor;
+}
+.networks-icon:hover,
+.networks-icon:focus {
+  fill: var(--primary-whit-color);
+}
 /* Портфолио */
 
 .filter-list {
@@ -307,9 +362,7 @@ p {
 }
 .project-card {
   margin: 0;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 20px;
+  padding: 20px 24px;
   border: 1px solid #eeeeee;
 }
 
@@ -318,15 +371,12 @@ p {
   display: inline-block;
 }
 .project-title {
-  margin-top: 20px;
   margin-bottom: 4px;
 
   font-size: 18px;
   line-height: 2;
   max-width: 370px;
-
   letter-spacing: 0.06em;
-
   color: var(--title-text-color);
 }
 .project-text {
