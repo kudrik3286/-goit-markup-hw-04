@@ -53,6 +53,53 @@ img {
   display: block;
 }
 
+/*----------------- Модальное окно------------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+
+  background: var(--primary-whit-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-button-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--primary-whit-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-button-close-icon {
+}
+
 /* Шапка */
 
 .header {
@@ -133,7 +180,19 @@ img {
   color: var(--accen-color);
 }
 .active {
+  position: relative;
   color: var(--accen-color);
+}
+.active::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+
+  content: "";
+  background-color: var(--accen-color);
+  border-radius: 2px;
 }
 /* Основной контент */
 
@@ -245,15 +304,15 @@ img {
   letter-spacing: 0.03em;
 }
 /* Чем мы занимаемся */
-.second {
-  display: flex;
-}
+
 .second-section {
   padding-bottom: 94px;
 }
-.second-item:not(:last-child) {
-  margin-right: 30px;
+
+.second {
+  display: flex;
 }
+
 .second-title {
   margin-bottom: 50px;
 
@@ -263,6 +322,43 @@ img {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
+
+.second-item + .second-item {
+  margin-left: 30px;
+}
+
+.second-item {
+  position: relative;
+}
+
+.second-label {
+  position: relative;
+}
+
+.second-label::before {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+
+  content: "";
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.second-lebal-text {
+  position: absolute;
+  left: 83px;
+  bottom: 27px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-whit-color);
+}
+
 /* -----Команда------- */
 .team {
   background-color: var(--secondary-bg-color);
@@ -426,7 +522,7 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
 
-  width: 370px;
+  width: calc((100% - 60px) / 3);
 }
 .project-item:nth-child(3n) {
   margin-right: 0px;
@@ -434,6 +530,11 @@ img {
 .project-item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
+
+.project-img {
+  position: relative;
+}
+
 .project-card {
   margin: 0;
   padding: 20px 24px;
@@ -449,6 +550,33 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+.project-link:focus .project-description,
+.project-link:hover .project-description {
+  opacity: 1;
+}
+
+.project-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+
+  width: 370px;
+  height: 294px;
+  background: rgba(33, 150, 243, 0.9);
+}
+
+.project-description-text {
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  letter-spacing: 0.03em;
+  color: var(--secondary-bg-color);
+}
+
 .project-title {
   margin-bottom: 4px;
 
