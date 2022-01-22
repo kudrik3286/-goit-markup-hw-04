@@ -46,7 +46,7 @@
         <section class="hero  section overlay">
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="hero-button">Заказать услугу</button>
+                <button data-modal-open type="button" class="hero-button">Заказать услугу</button>
             </div>          
         </section>
         <!--Секция приимущества -->
@@ -118,7 +118,7 @@
                 </ul>
             </div>
         </section>
-        <!--Секция четыре-->
+        <!--Наша команда-->
         <section class="team section">
             <div class="container">
                 <h2 class="second-title">Наша команда</h2>
@@ -365,14 +365,15 @@
              </div>
             </div>
     </footer> 
-    <div class="backdrop">
+    <div data-modal class="backdrop is-hidden">
         <div class="modal">
-            <button type="button" class="modal-button-close">
+            <button data-modal-close type="button" class="modal-button-close">
                 <svg class="modal-button-close-icon" width=18px height=18px>
                     <use href="img/icons.svg#icon-icon-cross"></use>
                 </svg>
             </button>
         </div>
-    </div>  
+    </div>
+    <script src="./js/modal.js"></script>  
 </body>
 </html>
